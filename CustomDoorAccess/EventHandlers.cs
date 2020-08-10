@@ -33,26 +33,26 @@ namespace CustomDoorAccess
                             {
                                 ev.IsAllowed = true;
                             }
-                            else if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
+                            else if (_plugin.Config.ScpAccess)
                             {
-                                ev.IsAllowed = false;
-                                if (_plugin.Config.ScpAccess)
+                                foreach (string scpAccessDoor in _plugin.Config.ScpAccessDoors)
                                 {
-                                    foreach (string scpAccessDoor in _plugin.Config.ScpAccessDoors)
+                                    if (ev.Door.DoorName.Equals(scpAccessDoor))
                                     {
-                                        if (ev.Door.DoorName.Equals(scpAccessDoor))
+                                        if (ply.ReferenceHub.characterClassManager.IsAnyScp())
                                         {
-                                            if (ply.ReferenceHub.characterClassManager.IsAnyScp())
-                                            {
-                                                ev.IsAllowed = true;
-                                            }
+                                            ev.IsAllowed = true;
                                         }
                                     }
                                 }
-                                else if(ply.IsBypassModeEnabled)
-                                {
-                                    ev.IsAllowed = true;
-                                }
+                            }
+                            else if(ply.IsBypassModeEnabled)
+                            {
+                                ev.IsAllowed = true;
+                            }
+                            else if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
+                            {
+                                ev.IsAllowed = false;
                             }
                         }
                         else

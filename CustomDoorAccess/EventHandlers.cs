@@ -33,7 +33,17 @@ namespace CustomDoorAccess
                             {
                                 ev.IsAllowed = true;
                             }
-                            else if (_plugin.Config.ScpAccess)
+                            else if(ply.IsBypassModeEnabled)
+                            {
+                                ev.IsAllowed = true;
+                            }
+                            
+                            if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
+                            {
+                                ev.IsAllowed = false;
+                            }
+                            
+                            if (_plugin.Config.ScpAccess)
                             {
                                 foreach (string scpAccessDoor in _plugin.Config.ScpAccessDoors)
                                 {
@@ -45,14 +55,6 @@ namespace CustomDoorAccess
                                         }
                                     }
                                 }
-                            }
-                            else if(ply.IsBypassModeEnabled)
-                            {
-                                ev.IsAllowed = true;
-                            }
-                            else if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
-                            {
-                                ev.IsAllowed = false;
                             }
                         }
                         else

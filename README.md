@@ -1,4 +1,4 @@
-# CustomDoorAccess 1.2
+# CustomDoorAccess 1.2.2
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---

@@ -25,7 +25,7 @@ namespace CustomDoorAccess
                     foreach (string eachValue in itemIDs)
                     {
                         int currentItem = Array.FindIndex(ply.Inventory.availableItems,
-                            r => r.id == ply.Inventory.curItem);
+                            r => r.id == ply.CurrentItem.id);
 
                         if (Int32.TryParse(eachValue, out int itemId))
                         {

@@ -9,7 +9,7 @@ namespace CustomDoorAccess
     {
         public EventHandlers _eventHandlers;
         public override string Author { get; } = "Faety";
-        public override Version RequiredExiledVersion { get; } = new Version(2, 0, 0);
+        public override Version RequiredExiledVersion { get; } = new Version(2, 0, 13);
         public override string Prefix { get; } = "cda";
         public override string Name { get; } = "CustomDoorAccess";
         

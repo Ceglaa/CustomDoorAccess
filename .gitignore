@@ -1,0 +1,9 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/packages/EXILED.2.0.1
+/.vs/CustomDoorAccess/v16
+/.vs
+/CustomDoorAccess/bin/Debug
+/CustomDoorAccess/obj/Debug

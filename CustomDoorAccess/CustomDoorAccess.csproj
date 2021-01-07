@@ -41,41 +41,35 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="0Harmony, Version=2.0.1.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\0Harmony.dll</HintPath>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>D:\Drive\Heaven Community\testing\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>D:\Drive\Heaven Community\testing\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.API, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Exiled.API.dll</HintPath>
+    <Reference Include="Assembly-CSharp_publicized">
+      <HintPath>D:\Drive\Heaven Community\testing\Assembly-CSharp_publicized.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Events, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Exiled.Events.dll</HintPath>
+    <Reference Include="Exiled.API">
+      <HintPath>D:\Drive\Heaven Community\testing\Exiled.API.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Loader, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Exiled.Loader.dll</HintPath>
+    <Reference Include="Exiled.Events">
+      <HintPath>D:\Drive\Heaven Community\testing\Exiled.Events.dll</HintPath>
     </Reference>
-    <Reference Include="Exiled.Permissions, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Exiled.Permissions.dll</HintPath>
-    </Reference>
-    <Reference Include="Exiled.Updater, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Exiled.Updater.dll</HintPath>
-    </Reference>
-    <Reference Include="Mirror, Version=3.7.1.6, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\Mirror.dll</HintPath>
+    <Reference Include="Mirror">
+      <HintPath>D:\Drive\Heaven Community\testing\Mirror.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnityEngine, Version=3.7.1.6, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\UnityEngine.dll</HintPath>
+    <Reference Include="UnityEngine">
+      <HintPath>D:\Drive\Heaven Community\testing\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=3.7.1.6, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\UnityEngine.CoreModule.dll</HintPath>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>D:\Drive\Heaven Community\testing\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
-    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e">
-      <HintPath>..\..\..\Desktop\EXILED\Exiled 2.0 DLLs\YamlDotNet.dll</HintPath>
+    <Reference Include="YamlDotNet">
+      <HintPath>D:\Drive\Heaven Community\testing\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

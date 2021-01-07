@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Exiled.Events.EventArgs;
+using Interactables.Interobjects.DoorUtils;
 using Log = Exiled.API.Features.Log;
 
 namespace CustomDoorAccess
@@ -17,7 +18,7 @@ namespace CustomDoorAccess
             foreach (KeyValuePair<string,string> x in _plugin.Config.AccessSet)
             {
 
-                if (ev.Door.DoorName.Equals(x.Key))
+                if (ev.Door.GetComponent<DoorNametagExtension>().GetName.Equals(x.Key))
                 {
                     string trimmedValue = x.Value.Trim();
                     string[] itemIDs = trimmedValue.Split('&');
@@ -27,7 +28,7 @@ namespace CustomDoorAccess
                         int currentItem = Array.FindIndex(ply.Inventory.availableItems,
                             r => r.id == ply.CurrentItem.id);
 
-                        if (Int32.TryParse(eachValue, out int itemId))
+                        if (int.TryParse(eachValue, out int itemId))
                         {
                             if (currentItem.Equals(itemId) && !currentItem.Equals(-1))
                             {
@@ -47,7 +48,7 @@ namespace CustomDoorAccess
                             {
                                 foreach (string scpAccessDoor in _plugin.Config.ScpAccessDoors)
                                 {
-                                    if (ev.Door.DoorName.Equals(scpAccessDoor))
+                                    if (ev.Door.GetComponent<DoorNametagExtension>().GetName.Equals(scpAccessDoor))
                                     {
                                         if (ply.ReferenceHub.characterClassManager.IsAnyScp())
                                         {

@@ -20,6 +20,6 @@ namespace CustomDoorAccess
             new Dictionary<string, string> {{"012", "0"}, {"914", "0"}, {"INTERCOM", "5&7"}};
 
         [Description("Set the doors that SCPs can open.")]
-        public List<string> ScpAccessDoors { get; set; } = new List<string> { "CHECKPOINT_LCZ_A", "CHECKPOINT_LCZ_B", "CHECKPOINT_ENT" };
+        public List<string> ScpAccessDoors { get; set; } = new List<string> { "CHECKPOINT_LCZ_A", "CHECKPOINT_LCZ_B", "CHECKPOINT_EZ_HCZ" };
     }
 }

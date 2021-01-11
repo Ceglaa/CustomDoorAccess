@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Exiled.API.Extensions;
 using Exiled.Events.EventArgs;
 using Interactables.Interobjects.DoorUtils;
 using Log = Exiled.API.Features.Log;
@@ -32,20 +31,24 @@ namespace CustomDoorAccess
 
                         if (int.TryParse(eachValue, out int itemId))
                         {
+                            if(ply.IsBypassModeEnabled)
+                            {
+                                ev.IsAllowed = true;
+                                return;
+                            }
+
+                            if (_plugin.Config.Scp079Bypass && ply.Role.Equals(RoleType.Scp079))
+                            {
+                                ev.IsAllowed = true;
+                                return;
+                            }
+                            
                             if (currentItem.Equals(itemId) && !currentItem.Equals(-1))
                             {
                                 ev.IsAllowed = true;
+                                return;
                             }
-                            else if(ply.IsBypassModeEnabled)
-                            {
-                                ev.IsAllowed = true;
-                            }
-                            
-                            if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
-                            {
-                                ev.IsAllowed = false;
-                            }
-                            
+
                             if (_plugin.Config.ScpAccess)
                             {
                                 foreach (string scpAccessDoor in _plugin.Config.ScpAccessDoors)
@@ -55,9 +58,16 @@ namespace CustomDoorAccess
                                         if (ply.ReferenceHub.characterClassManager.IsAnyScp())
                                         {
                                             ev.IsAllowed = true;
+                                            return;
                                         }
                                     }
                                 }
+                            }
+                            
+                            if (_plugin.Config.RevokeAll && !itemIDs.Contains(currentItem.ToString()))
+                            {
+                                ev.IsAllowed = false;
+                                return;
                             }
                         }
                         else

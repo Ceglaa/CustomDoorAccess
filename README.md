@@ -1,65 +1,69 @@
-# CustomDoorAccess 1.2.3
+# CustomDoorAccess 1.2.4
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
-cda_access_set | Dictionary | 012: 0 / 173: 1&2 / INTERCOM: 5&7 | Gives access to the door with the item(s) that you set.
-cda_revoke_all | Bool | false | Revoke the access to all the others cards or not.
-cda_scp_access | Bool | false | Allow SCPs to open doors that you set with cda_scp_access_doors.
-cda_scp_access_doors | List | CHECKPOINT_ENT / CHECKPOINT_LCZ_A / CHECKPOINT_LCZ_B | Set the doors that SCPs can open.
+is_enabled | Bool | true | Enable or disable CustomDoorAccess.
+revoke_all | Bool | false | Allow or disallow revocation of the access to all the other keycards.
+scp_access | Bool | false | Allow or disallow SCPs to open doors that you set with scp_access_doors.
+access_set | Dictionary | 012: 0 / 173: 1&2 / INTERCOM: 5&7 | Gives access to the door with the item(s) that you set.
+scp_access_doors | List | CHECKPOINT_ENT / CHECKPOINT_LCZ_A / CHECKPOINT_LCZ_B | List of the doors that SCPs can open. Only works if door is edited on the access_set config.
+scp079_bypass | Bool | true | Allow or disallow SCP-079 bypass.
 
 ```
-Thanks to EXILED 2.0 and his authors, the configs are now easier to set.
+Example:
+You want the NUKE_SURFACE door to only be opened with a O5 Keycard and a Chaos Card => set revoke_all to true and add NUKE_SURFACE to access_set with the following ids 10&11 (USE & separator to add multiple items)
 
-Exemple:
-If you want that the NUKER SURFACE Door only gets open with a O5 Keycard and a Chaos Card, you need to set cda_revoke_all to true and add to access_set NUKE_SURFACE: 10&11
+revoke_all: true
+access_set: 
+    NUKE_SURFACE: 10&11
 
-Note that cda_revoke_all only revokes access to the default cards to the doors that you added with cda_scp_access.
+It’s worth noting that revoke_all only revokes access to the default cards to the doors which you added with access_set.
 
-If you need help with the configs, contact me on Discord @Faety#0060.
+If you need help with the configurations, contact me on Discord @Faety#0060.
 ```
 
-**Some doors need cda_revoke_all to work because they don't need keycards by default!**
+**Some doors need revoke_all to work because they don’t need keycards by default!**
 ```
-Exemple : ESCAPE
+012_BOTTOM,012_LOCKER,173_ARMORY,173_CONNECTOR,ESCAPE_PRIMARY,ESCAPE_SECONDARY,GR18,HID_LEFT,HID_RIGHT,LCZ_WC,SERVERS_BOTTOM,SURFACE_GATE
 ```
 
 ### Doors List
 
 Doors ID | Room/Door
 --- | ---
-012 | SCP-012
+012 | SCP-012 FIRST CONTAINEMENT DOOR
 012_BOTTOM | SCP-012 CONTAINEMENT DOOR
-012_LOCKER | SCP-012 LOCKER
+012_LOCKER | SCP-012 LOCKER DOOR
 049_ARMORY | SCP-049 ARMORY DOOR
-079_FIRST | SCP-079 FIRST BIG DOOR
-079_SECOND | SCP-079 SECOND BIG DOOR
+079_FIRST | SCP-079 FIRST GATE
+079_SECOND | SCP-079 SECOND GATE
 096 | SCP-096 CONTAINEMENT DOOR
 106_BOTTOM | SCP-106 BOTTOM DOOR
 106_PRIMARY | SCP-106 LEFT DOOR
 106_SECONDARY | SCP-106 RIGHT DOOR
 173_ARMORY | SCP-173 ARMORY DOOR
-173_BOTTOM | SCP-173 BOTTOM DOOR (like me)
-173_CONNECTOR | SCP-173 CONNECTOR DOOR
-173_GATE | SCP-173 CONTAINEMENT DOOR
-914 | SCP-914 CONTAINEMENT DOOR
+173_BOTTOM | SCP-173 FIRST DOOR (like me)
+173_CONNECTOR | SCP-173 SECOND DOOR
+173_GATE | SCP-173 CONTAINEMENT GATE
+914 | SCP-914 CONTAINEMENT GATE
 CHECKPOINT_EZ_HCZ | ENTRANCE CHECKPOINT
 CHECKPOINT_LCZ_A | LCZ A CHECKPOINT
 CHECKPOINT_LCZ_B | LCZ B CHECKPOINT
-ESCAPE_PRIMARY | DOOR NEAR THE MTF SPAWN BEFORE ESCAPE
-ESCAPE_SECONDARY | SECOND DOOR NEAR THE SPAWN BEFORE ESCAPE
-GATE_A | GATE A DOOR
-GATE_B | GATE B DOOR
-GR18 | DOOR OF THE EMPTY ROOM IN LCZ
-HCZ_ARMORY | HCZ ARMORY
+ESCAPE_PRIMARY | FIRST DOOR NEAR THE MTF SPAWN
+ESCAPE_SECONDARY | SECOND DOOR NEAR THE SPAWN
+GATE_A | GATE A
+GATE_B | GATE B
+GR18 | FOOR FROM EMPTY CONTAINEMENT ROOM IN LCZ
+HCZ_ARMORY | HCZ ARMORY DOOR
 HID | HID DOOR
 HID_LEFT | HID LEFT DOOR
 HID_RIGHT | HID RIGHT DOOR
 INTERCOM | INTERCOM DOOR
 LCZ_ARMORY | LCZ ARMORY DOOR
-LCZ_CAFE | DOOR FROM THE CAFE WITH THE TABLES IN LCZ
+LCZ_CAFE | DOOR FROM THE TABLES ROOMS IN LCZ
 LCZ_WC | TOILETS DOOR OR FOR AMERICANS WC
 NUKE_ARMORY | NUKE ARMORY DOOR
-SERVERS_BOTTOM | DOOR FROM THE SERVERS ROOM (like me)
+SERVERS_BOTTOM | FROM THE SERVERS ROOM (like me)
 SURFACE_GATE | DOOR BETWEEN MTF/CHAOS
 SURFACE_NUKE | DOOR FROM THE NUKE AT THE SURFACE
 

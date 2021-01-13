@@ -1,4 +1,4 @@
-# CustomDoorAccess 1.2.4
+# CustomDoorAccess 1.3.0
 
 Config Setting | Value Type | Default Value | Description
 --- | --- | --- | ---
@@ -8,14 +8,16 @@ scp_access | Bool | false | Allow or disallow SCPs to open doors that you set wi
 access_set | Dictionary | 012: 0 / 173: 1&2 / INTERCOM: 5&7 | Gives access to the door with the item(s) that you set.
 scp_access_doors | List | CHECKPOINT_ENT / CHECKPOINT_LCZ_A / CHECKPOINT_LCZ_B | List of the doors that SCPs can open. Only works if door is edited on the access_set config.
 scp079_bypass | Bool | true | Allow or disallow SCP-079 bypass.
+generator_access | List | Empty | List of item(s) that are allowed to open the generator doors. (If empty the default keycards will be used).
+elevator_access | Dictionary | Empty | Dictionary of elevators and item(s). (If empty no access will be set).
 
 ```
 Example:
-You want the NUKE_SURFACE door to only be opened with a O5 Keycard and a Chaos Card => set revoke_all to true and add NUKE_SURFACE to access_set with the following ids 10&11 (USE & separator to add multiple items)
+You want the SURFACE_NUKE door to only be opened with a O5 Keycard and a Chaos Card => set revoke_all to true and add SURFACE_NUKE to access_set with the following ids 10&11 (USE & separator to add multiple items)
 
 revoke_all: true
 access_set: 
-    NUKE_SURFACE: 10&11
+    SURFACE_NUKE: 10&11
 
 It’s worth noting that revoke_all only revokes access to the default cards to the doors which you added with access_set.
 
@@ -27,6 +29,25 @@ If you need help with the configurations, contact me on Discord @Faety#0060.
 012_BOTTOM,012_LOCKER,173_ARMORY,173_CONNECTOR,ESCAPE_PRIMARY,ESCAPE_SECONDARY,GR18,HID_LEFT,HID_RIGHT,LCZ_WC,SERVERS_BOTTOM,SURFACE_GATE
 ```
 
+If generator_access and elevator_access are let empty, the default parameters will be used.
+
+#### New features
+```
+Example:
+Change generator access keycards to only guard and O5.
+
+generator_access:
+    - 4
+    - 11
+
+Example:
+Change Lift A elevator access to Scientist, Maj Scientist, Zone Manager.
+
+elevator_access:
+    SystemA: 1&2&3
+
+At the moment SCPs can bypass elevator accesses.
+```
 ### Doors List
 
 Doors ID | Room/Door
@@ -108,3 +129,14 @@ Items ID | Description
 33 | Adrenaline
 34 | Painkillers
 35 | Coin
+
+### Elevators List
+
+Elevators ID | Description
+--- | ---
+GateA | Gate A Elevator
+GateB | Gate B Elevator
+Scp049 | SCP-049 Elevator
+SystemA | Lift A Elevator
+SystemB | Lift B Elevator
+Nuke | Warhead Elevator

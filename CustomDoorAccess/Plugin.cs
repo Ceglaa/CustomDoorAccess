@@ -12,7 +12,7 @@ namespace CustomDoorAccess
         public override Version RequiredExiledVersion { get; } = new Version(2, 1, 26);
         public override string Prefix { get; } = "cda";
         public override string Name { get; } = "CustomDoorAccess";
-        public override Version Version { get; } = new Version(1, 2, 5);
+        public override Version Version { get; } = new Version(1, 3, 0);
 
         public override void OnEnabled()
         {

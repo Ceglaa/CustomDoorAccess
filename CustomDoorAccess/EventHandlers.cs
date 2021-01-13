@@ -43,7 +43,7 @@ namespace CustomDoorAccess
                                 return;
                             }
                             
-                            if (currentItem.Equals(itemId) && !currentItem.Equals(0))
+                            if (currentItem.Equals(itemId) && !currentItem.Equals(-1))
                             {
                                 ev.IsAllowed = true;
                                 return;
@@ -144,7 +144,7 @@ namespace CustomDoorAccess
                             return;
                         }
                         
-                        if (currentItem.Equals(itemId) && !currentItem.Equals(0))
+                        if (currentItem.Equals(itemId) && !currentItem.Equals(-1))
                         {
                             ply.ShowHint("<color=green>ACCESS GRANTED</color>");
                             ev.IsAllowed = true;

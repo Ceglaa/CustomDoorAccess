@@ -24,5 +24,15 @@ namespace CustomDoorAccess
 
         [Description("Allow or disallow SCP-079 bypass.")]
         public bool Scp079Bypass { get; set; } = false;
+
+        [Description("List of item(s) that are allowed to open the generator doors. (If empty the default keycards will be used)")]
+        public List<int> GeneratorAccess { get; set; } = new List<int>();
+
+        /*[Description(
+            "List of item(s) that are allowed to open the lockers. (If empty the default keycards will be used)")]
+        public List<int> LockerAccess { get; set; } = new List<int>();*/
+
+        [Description("List of item(s) that are allowed to use the elevators. (If empty no access will be set)")]
+        public Dictionary<string, string> ElevatorAccess { get; set; } = new Dictionary<string, string>();
     }
 }
